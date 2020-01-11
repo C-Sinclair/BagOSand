@@ -4,3 +4,4 @@
 (deftest a-failing-test
   (is (= 1 2)))
 
+(cljs.test/run-tests)
