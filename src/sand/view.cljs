@@ -25,3 +25,4 @@
             [:sub "Weighing in at "]
             [:strong (state/weight-total)]]
         [:span (str "Subtotal" (state/subtotal))]])
+

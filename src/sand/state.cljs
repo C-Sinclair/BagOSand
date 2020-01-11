@@ -13,3 +13,9 @@
 (defn subtotal 
     []
     (str "£" (:basket/total @app-state)))
+
+(defn plus 
+  [x y]
+  (+ x y))
+
+(plus 1 5)

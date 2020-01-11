@@ -1,6 +1,7 @@
 {:source-paths ["src"]
 
  :dependencies [[binaryage/devtools "0.9.10"]
+                [cider/cider-nrepl "0.18.0"]
                 [reagent "0.8.1"]]
 
  :nrepl        {:port 3333}
@@ -11,4 +12,9 @@
 
                 :modules    {:main {:entries [sand.browser]}}
                 :devtools   {:http-root "public"
-                             :http-port 8020}}}}
+                             :http-port 8020}}
+
+          :test {:target :browser-test
+                 :test-dir "resources/public/js/test"
+                 :devtools {:http-root "resources/public/js/test"
+                            :http-port 8021}}}}

@@ -12,3 +12,4 @@
         (if (> new-figure 0)
             (swap! app-state assoc :basket/weight new-figure)
             (swap! app-state assoc :basket/weight 0))))
+
