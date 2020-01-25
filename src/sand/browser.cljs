@@ -1,12 +1,14 @@
 (ns sand.browser
   (:require [reagent.core :as reagent]
+            [sand.routes :as routes]
             [sand.view :as view]))
 
 (defn ^:dev/after-load start 
   []
-  (js/console.log "start")
-  (reagent/render-component [view/app]
-                            ( .getElementById js/document "app" )))
+  (js/console.log "s")
+  (routes/app-routes)
+  (reagent/render [routes/current-page]
+                  (.getElementById js/document "app" )))
 
 (defn ^:export init 
   []
