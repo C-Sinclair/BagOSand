@@ -3,6 +3,7 @@
  :dependencies [[binaryage/devtools "0.9.10"]
                 [cider/cider-nrepl "0.18.0"]
                 [reagent "0.8.1"]
+                [clj-commons/cljss "1.6.4"]
                 [clj-commons/secretary "1.2.4"]]
 
  :nrepl        {:port 3333}
