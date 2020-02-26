@@ -1,6 +1,7 @@
 (ns sand.view
     (:require [sand.state :as state]
               [sand.events :as events]
+              [sand.styles :refer [title]]
               [clojure.string :as str]))
 
 (defn increase-button
@@ -18,7 +19,7 @@
 (defn app 
     []
     [:main
-        [:h1 "Bag o Sand"]
+        [:h1 {:class (title)} "Bag o Sand"]
         (increase-button)
         (decrease-button)
         [:div.weight 

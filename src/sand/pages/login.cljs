@@ -1,18 +1,10 @@
 (ns sand.pages.login
-  (:require-macros [cljss.core :refer [defstyles]])
-  (:require [reagent.core :as reagent :refer [atom]]
-            [cljss.core :as css]
-            [sand.state :as state]))
-
-(def white "#fff")
-(def light-blue "#6f42c1")
-
-(defstyles button []
-  {:background-color white
-   :color light-blue
-   :&:hover {:background-color light-blue
-             :color white
-             :box-shadow "inset 1px 1px black"}})
+  (:require
+   [hiccup-icons.fa :as icon]
+   [reagent.core :as reagent :refer [atom]]
+   [cljss.core :as css]
+   [sand.styles :refer [input button]]
+   [sand.state :as state]))
 
 (def user-credentials
   (atom {:email ""
@@ -24,14 +16,22 @@
 (defn update-password [password]
   (swap! user-credentials assoc :password password))
 
+(defn submit []
+  (js/console.log (str "Submitting with email: " (:email @user-credentials) " and password: " (:password @user-credentials))))
+
 (defn login []
   [:div [:h1 "Login Page"]
    [:form
-    [:div [:label "Email"]
-          [:input {:type "text"
-                   :on-change #(update-email (-> % .-target .-value))}]]
-    [:div [:label "Password"]
-     [:input {:type "password"
+    [:div
+     [:input {:class (input)
+              :type "text"
+              :placeholder "Email"
+              :on-change #(update-email (-> % .-target .-value))}]]
+    [:div
+     [:input {:class (input)
+              :type "password"
+              :placeholder "Password"
               :on-change #(update-password (-> % .-target .-value))}]]
-    [:button {:class (button)} "Login"]]
-   [:a {:href "#/"} "Go home"]])
+    [:button {:class (button)
+              :on-click #(submit)} "Login"]]
+   [:a {:href "#/"} icon/home-solid]])

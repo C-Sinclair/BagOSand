@@ -1,7 +1,6 @@
 (ns sand.browser
   (:require [reagent.core :as reagent]
-            [sand.routes :as routes]
-            [sand.view :as view]))
+            [sand.routes :as routes]))
 
 (defn ^:dev/after-load start []
   (routes/app-routes)

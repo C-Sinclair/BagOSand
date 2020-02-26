@@ -4,6 +4,7 @@
   (:require [sand.state :refer [app-state]]
             [sand.pages.home :refer [home]]
             [sand.pages.login :refer [login]]
+            [sand.pages.checkout :refer [checkout]]
             [secretary.core :as secretary]
             [goog.events :as events]
             [goog.history.EventType :as EventType]
@@ -36,5 +37,7 @@
   [home])
 (defmethod current-page :login []
   [login])
+(defmethod current-page :checkout []
+  [checkout])
 (defmethod current-page :default []
   [:div])
