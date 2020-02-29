@@ -1,7 +1,7 @@
 {:source-paths ["src"]
 
  :dependencies [[binaryage/devtools "0.9.10"]
-                [cider/cider-nrepl "0.18.0"]
+                [cider/cider-nrepl "0.21.0"]
                 [reagent "0.8.1"]
                 [hiccup-icons "0.4.2"]
                 [cljsjs/react "15.6.1-1"]

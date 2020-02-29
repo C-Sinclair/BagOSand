@@ -30,7 +30,7 @@
 
 (defn sand-item [item]
   [:li {:class (item-li)}
-   [:img {:src "../../../resources/public/img/sand1.png"}]
+   [:img {:src "/img/sand1.png"}]
    [:h4 (:title item)]
    [:p (:description item)]
    [:div {:class (item-bottom-container)}
@@ -77,3 +77,4 @@
    (sand-list)
    (basket)
    [:a {:href "#/login"} "Login to view your sand"]])
+
