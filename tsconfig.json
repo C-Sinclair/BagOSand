@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "declaration": true,
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "rootDir": "./src",
+        "listFiles": true,
+        "noEmitOnError": true,
+        "typeRoots": ["src/types"]
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "!./**/*.d.ts",
+        "!./gulpfile.ts",
+        "./typings/**/*.d.ts",
+        "!./node_modules/**/*.ts",
+        "./node_modules/typescript/lib/lib.es6.d.ts"
+    ],
+    "exclude": [],
+    "files": []
+}

@@ -1,7 +1,7 @@
 const path = require('path')
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-    const { createPage  } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+    const { createPage  } = actions
     const productTemplate = path.resolve('src/templates/Product.tsx')
     return graphql(`
         { allMarkdownRemark {
@@ -12,6 +12,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                         path
                         title
                         description
+                        origin
                     }
                 }
             }
@@ -20,12 +21,21 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         if (res.errors) {
             return Promise.reject(res.errors)
         }
-        res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            createPage({
-                path: node.frontmatter.path,
-                component: productTemplate
+        const { edges } = res.data.allMarkdownRemark
+        edges
+            .map(({ node }) => ({
+                id: node.id,
+                ...node.frontmatter
+            }))
+            .forEach((node) => {
+                createPage({
+                    path: node.path,
+                    component: productTemplate,
+                    context: {
+                        product: node
+                    }
+                })
             })
-        })
     })
 
 }

@@ -1,28 +1,27 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import {ThemeProvider} from 'styled-components'
+import { ThemeProvider } from 'emotion-theming'
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import theme from '../../assets/stylesheets/theme'
+import { BackgroundImg } from './styled'
+import { useSiteData } from "./data"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  const { site, image } = useSiteData()
   return (
     <ThemeProvider theme={theme}>
-      <Header title={data.site.siteMetadata.title}/>
-      <main>{children}</main>
-      <Footer/>
+      <BackgroundImg
+        Tag='section'
+        fluid={image}
+        backgroundColor={`#000000`}
+      >
+        <Header title={site.title}/>
+        <main>{children}</main>
+        <Footer/>
+      </BackgroundImg>
     </ThemeProvider>
   )
 }
+
 
 export default Layout
