@@ -1,6 +1,6 @@
 import tw from 'tailwind.macro'
 import styled from '@emotion/styled'
-import { IoIosBasket } from 'react-icons/io'
+import { IoIosBasket, IoIosHome } from 'react-icons/io'
 
 export const Root = styled.header(({ theme }: StyleArgs) => ({
     display: 'flex',
@@ -27,4 +27,14 @@ export const Basket = styled(IoIosBasket)(({ theme }: StyleArgs) => ({
     '&:hover': {
         transform: `rotate(${theme.spacing(1)}deg)`
     }
+}))
+
+export const Home = styled(IoIosHome)(({ theme }: StyleArgs) => ({
+    fill: theme.colours.white,
+    height: theme.spacing(3),
+    width: theme.spacing(3),
+    position: 'absolute',
+    left: theme.spacing(2),
+    top: theme.spacing(2),
+    cursor: 'pointer'
 }))
