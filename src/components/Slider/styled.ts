@@ -10,5 +10,17 @@ export const SliderContainer = styled.div`
 
 export const Slide = styled(BackgroundImg)(({ theme }: StyleArgs) => ({
    height: 400,
-   padding: theme.spacing(5) 
+   padding: theme.spacing(5),
+   '&:before': {
+       filter: `blur(0.75) grayscale(0.4)`
+   }
+}))
+
+export const Title = styled.h1(({ theme }: StyleArgs) => ({
+    color: theme.colours.white,
+    fontSize: '2em'
+}))
+
+export const Description = styled.p(({ theme }: StyleArgs) => ({
+    color: theme.colours.white
 }))

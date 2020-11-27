@@ -1,7 +1,7 @@
 import React from "react"
 import SlickSlider from "react-slick"
 import { navigate } from "gatsby"
-import { SliderContainer, Slide } from './styled'
+import { SliderContainer, Slide, Title, Description } from './styled'
 import { useSliderData } from "./data"
 
 import 'slick-carousel/slick/slick.css'
@@ -19,12 +19,12 @@ export const Slider = () => {
         { slides.map(({ title, description, path }, index) => (
           <Slide 
             onClick={handleSlideClick(path)}
-            Tag='article'
+            Tag='article' 
             fluid={images[index]}
             backgroundColor={`#000000`}
           >
-            <h1>{title}</h1>
-            <p>{description}</p>
+            <Title>{title}</Title>
+            <Description>{description}</Description>
           </Slide>
         ))}
       </SlickSlider>
