@@ -11,6 +11,8 @@
         "rootDir": "./src",
         "listFiles": true,
         "noEmitOnError": true,
+        "jsx": "react",
+        "types": ["src/types/style.d.ts"],
         "typeRoots": ["src/types"]
     },
     "filesGlob": [
@@ -22,6 +24,5 @@
         "!./node_modules/**/*.ts",
         "./node_modules/typescript/lib/lib.es6.d.ts"
     ],
-    "exclude": [],
-    "files": []
+    "exclude": []
 }

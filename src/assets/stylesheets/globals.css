@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
 
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
-
-h1, h2, h3, h4, h5, h6, p, u, i, b {
-    color: '#ffffff'
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+u,
+i,
+b {
+  color: "#ffffff";
 }

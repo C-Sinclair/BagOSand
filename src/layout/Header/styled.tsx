@@ -1,4 +1,3 @@
-import tw from 'tailwind.macro'
 import styled from '@emotion/styled'
 import { IoIosBasket, IoIosHome } from 'react-icons/io'
 

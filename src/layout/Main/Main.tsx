@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { ThemeProvider } from 'emotion-theming'
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
@@ -6,7 +6,7 @@ import theme from '../../assets/stylesheets/theme'
 import { BackgroundImg } from './styled'
 import { useSiteData } from "./data"
 
-const Layout = ({ children }) => {
+const Layout: FC = ({ children }) => {
   const { site, image } = useSiteData()
   return (
     <ThemeProvider theme={theme}>

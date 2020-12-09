@@ -1,6 +1,3 @@
-let facebook_pixel = ''
-let gtm = ''
-
 module.exports = {
   siteMetadata: {
     title: `Bag O Sand`,
@@ -9,7 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,33 +21,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-tagmanager',
+      resolve: `gatsby-plugin-favicon`,
       options: {
-        id: gtm,
-        includeInDevelopment: false
+        logo: './src/assets/images/blacksandpile.png'
       }
     },
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: facebook_pixel,
-      }
-    },
-    // {
-    //   resolve: `gatsby-plugin-favicon`,
-    //   options: {
-    //     logo: './src/assets/images/gatsby-icon.png'
-    //   }
-    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
-    // `gatsby-plugin-sitemap`,
     // 'gatsby-plugin-robots-txt',
     // `gatsby-plugin-netlify`,
     // `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-styled-components`,
     {
 			resolve: `gatsby-transformer-remark`,
 			options: {
@@ -63,12 +44,6 @@ module.exports = {
 			}
     },
     {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        // Accepts all options defined by `gatsby-plugin-postcss` plugin.
-      },
-    },
-   {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.

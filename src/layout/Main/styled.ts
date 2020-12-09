@@ -1,12 +1,8 @@
 import Img from 'gatsby-background-image'
 import styled from '@emotion/styled'
-import tw from 'tailwind.macro'
 
-export const Background = tw.div`
-    bg-black
-    bg-opacity-25
-    h-screen
-    overflow-hidden
+export const Background = styled.div`
+    
 `
 
 export const BackgroundImg = styled(Img)(({ theme }: StyleArgs) => ({
